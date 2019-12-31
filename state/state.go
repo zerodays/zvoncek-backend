@@ -5,6 +5,7 @@ import (
 	"net"
 	"sync"
 	"time"
+	"zvon/logger"
 )
 
 // State struct that holds information about current state.
@@ -84,6 +85,8 @@ func (st *State) Bang() {
 				st.RemoveConnection(c)
 				return
 			}
+
+			logger.Log("Sent", "STATE", logger.LevelDebug)
 		}(c)
 	}
 
