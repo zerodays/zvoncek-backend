@@ -7,7 +7,7 @@ import (
 )
 
 func Listen() {
-	ln, err := net.Listen("tcp", "0.0.0.0:69")
+	ln, err := net.Listen("tcp", "0.0.0.0:8069")
 	if err != nil {
 		log.Fatal(err)
 	}
