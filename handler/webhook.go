@@ -42,6 +42,7 @@ func IssuesWebhook(w http.ResponseWriter, r *http.Request, _ httprouter.Params) 
 	// If action was close, then the issue was closed and needs banging is set to true.
 	if action == "close" {
 		state.Current.SetNeedsBanging(true)
+		state.Current.Bang()
 	}
 
 	// Write response to client.

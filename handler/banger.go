@@ -33,3 +33,10 @@ func BangerHandler(w http.ResponseWriter, r *http.Request, _ httprouter.Params) 
 	})
 	_, _ = w.Write(res)
 }
+
+func Bang(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
+	state.Current.SetNeedsBanging(true)
+	state.Current.Bang()
+
+	w.WriteHeader(http.StatusOK)
+}

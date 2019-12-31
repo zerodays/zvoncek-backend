@@ -27,7 +27,12 @@ var routes = []Route{
 	},
 	{
 		Name: "banging",
-		Path: "/bang",
+		Path: "/should_bang",
 		GET:  handler.BangerHandler,
+	},
+	{
+		Name: "bang",
+		Path: "/bang",
+		GET:  handler.Bang,
 	},
 }
