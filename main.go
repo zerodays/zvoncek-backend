@@ -17,6 +17,8 @@ func main() {
 	// Set minimum logger level from config.
 	logger.MinimumLevel = logger.Level(config.Current.MinimumLogLevel)
 
+	go Listen()
+
 	// Create router and run server.
 	r := router.NewRouter()
 	log.Fatal(http.ListenAndServe(config.Current.ListenAddress, r))
